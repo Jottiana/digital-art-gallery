@@ -4,7 +4,11 @@
 	"main": "index.js",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
-		"check": "biome check src"
+		"check": "biome check src",
+		"start": "node server.js"
+	},
+	"engines": {
+		"node": ">=18"
 	},
 	"keywords": [],
 	"author": "",
