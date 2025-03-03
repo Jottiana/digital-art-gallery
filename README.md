@@ -39,12 +39,7 @@ Aller sur https://railway.app/ et se connecter avec GitHub.
 
 ### 📌 2. Lancer le déploiement
 
-  Créer un nouveau projet sur Railway.
-  Connecter le dépôt GitHub et sélectionner galerie-artistique.
-  Ajouter une variable d’environnement dans Railway :
-  `PORT = 3000`
-  Lancer le déploiement 🚀 Railway générera une URL publique pour ton site.
-
+---
 
 ## 📜 License
 
