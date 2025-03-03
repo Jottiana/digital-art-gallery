@@ -4,6 +4,8 @@ fetch('/images')
         const gallery = document.getElementById('gallery');
         gallery.innerHTML = "";
         images.forEach(imageUrl => {
+            if (!imageUrl.startsWith("http")) return;
+
             const img = document.createElement('img');
             img.src = imageUrl;
             img.alt = "Image uploadée";
@@ -12,4 +14,4 @@ fetch('/images')
             gallery.appendChild(img);
         });
     })
-    .catch(error => console.error("Erreur lors du chargement des images:", error));
+    .catch(error => console.error("🚨 Erreur lors du chargement des images :", error));

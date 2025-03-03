@@ -7,7 +7,20 @@ const { v2: cloudinary } = require("cloudinary");
 const { CloudinaryStorage } = require("multer-storage-cloudinary");
 
 const app = express();
-app.use(helmet());
+app.use(
+	helmet({
+		contentSecurityPolicy: {
+			directives: {
+				defaultSrc: ["'self'"],
+				scriptSrc: ["'self'", "'unsafe-inline'"],
+				imgSrc: ["'self'", "data:", "https://res.cloudinary.com"],
+			},
+		},
+	}),
+);
+
+const cors = require("cors");
+app.use(cors());
 
 const PORT = process.env.PORT || 3000;
 
@@ -45,6 +58,7 @@ app.post("/upload", upload.single("image"), (req, res) => {
 	fs.writeFileSync("images.json", JSON.stringify(images, null, 2));
 
 	res.redirect("/");
+	console.log("🖼️ Images enregistrées :", images);
 });
 
 app.get("/images", (req, res) => {
