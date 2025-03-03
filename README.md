@@ -11,6 +11,7 @@ Un site permettant aux utilisateurs d'uploader et d'exposer des œuvres génér�
 
 ---
 
+
 ## 🛠️ Installation et Exécution en Local
 
 ### 1️⃣ Cloner le projet
@@ -29,6 +30,22 @@ Ouvrir http://localhost:3000 pour voir la galerie.
 
 ---
 
+
+## 🔥 Déploiement sur Railway
+
+### 📌 1. Créer un compte Railway
+
+Aller sur https://railway.app/ et se connecter avec GitHub.
+
+### 📌 2. Lancer le déploiement
+
+  Créer un nouveau projet sur Railway.
+  Connecter le dépôt GitHub et sélectionner galerie-artistique.
+  Ajouter une variable d’environnement dans Railway :
+  `PORT = 3000`
+  Lancer le déploiement 🚀 Railway générera une URL publique pour ton site.
+
+
 ## 📜 License
 
-This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
+Ce projet est sous **licence MIT** - voir [LICENSE](LICENSE) pour plus de détails.

@@ -1,45 +1,45 @@
 body {
-  font-family: Arial, sans-serif;
-  text-align: center;
-  background-color: #f4f4f4;
+	font-family: Arial, sans-serif;
+	text-align: center;
+	background-color: #f4f4f4;
 }
 
 h1 {
-  margin-top: 30px;
-  margin-bottom: 50px;
-  font-family: 'Big Shoulders Stencil';
-  font-weight: 500;
-  font-size: 100px;
-  background: linear-gradient(90deg, #ff7ef4, #ff758c, #ff8a7e);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+	margin-top: 30px;
+	margin-bottom: 50px;
+	font-family: "Big Shoulders Stencil";
+	font-weight: 500;
+	font-size: 100px;
+	background: linear-gradient(90deg, #ff7ef4, #ff758c, #ff8a7e);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
 }
 
 #gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 10px;
-  padding: 20px;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	gap: 10px;
+	padding: 20px;
 }
 
 img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s ease-in-out;
+	width: 100%;
+	height: auto;
+	border-radius: 8px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	transition: transform 0.2s ease-in-out;
 }
 
 img:hover {
-  transform: scale(1.05);
+	transform: scale(1.05);
 }
 
 button {
-  margin: 20px;
-  padding: 5px 10px;
-  background-color: #ff758c;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
+	margin: 20px;
+	padding: 5px 10px;
+	background-color: #ff758c;
+	color: white;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
 }
