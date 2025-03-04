@@ -69,6 +69,35 @@ app.get("/images", (req, res) => {
 	res.json([]);
 });
 
+app.post("/delete", express.json(), (req, res) => {
+	const { imageUrl } = req.body;
+
+	if (!imageUrl) {
+			return res.status(400).json({ success: false, error: "Aucune URL fournie" });
+	}
+
+	const fs = require("fs");
+	let images = [];
+
+	if (fs.existsSync("images.json")) {
+			images = JSON.parse(fs.readFileSync("images.json"));
+	}
+
+	const newImages = images.filter(url => url !== imageUrl);
+	fs.writeFileSync("images.json", JSON.stringify(newImages, null, 2));
+
+	const publicId = imageUrl.split('/').pop().split('.')[0];
+	cloudinary.uploader.destroy(`galerie_art/${publicId}`, (error, result) => {
+			if (error) {
+					console.error("🚨 Erreur suppression Cloudinary :", error);
+					return res.status(500).json({ success: false, error });
+			}
+			console.log("✅ Image supprimée de Cloudinary :", result);
+			res.json({ success: true });
+	});
+});
+
+
 app.listen(PORT, "0.0.0.0", () =>
 	console.log(`✅ Serveur en ligne sur port ${PORT}`),
 );
